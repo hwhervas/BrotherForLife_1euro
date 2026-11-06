@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Por un euro al día, tu empresa ayuda a mejorar la vida de jóvenes que han crecido en el sistema de protección. Euro Solidario, de Brother For Life.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Brother For Life">
+<meta property="og:title" content="Euro Solidario · Por un euro al día puedes cambiar la vida de muchas personas">
+<meta property="og:description" content="Tu empresa puede acompañar a jóvenes tutelados y extutelados de Valencia. Descubre cómo sumarte.">
+<meta property="og:url" content="https://hwhervas.github.io/BrotherForLife_1euro/">
+<meta property="og:image" content="https://hwhervas.github.io/BrotherForLife_1euro/euro-solidario.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<title>Euro Solidario · Brother For Life</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,900;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --turquesa:#0B7E84; --negro:#1C1C1B; --magenta:#E5007D; --amarillo:#FFED00; --verde:#009640; --cian:#009EE3;
+    --fondo:#ffffff; --suave:#F3F7F7; --texto:#1C1C1B; --texto2:#4a4a49;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Roboto',Arial,sans-serif;color:var(--texto);background:var(--fondo);line-height:1.6;font-size:17px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-weight:900;line-height:1.05;letter-spacing:-.01em}
+  h2{font-size:clamp(30px,5vw,46px);margin-bottom:14px}
+  h3{font-size:21px;margin-bottom:8px}
+  .sub{font-weight:500;font-style:italic;font-size:19px;color:var(--texto2);max-width:640px}
+  section{padding:84px 0}
+  .btn{display:inline-block;font-weight:900;font-size:17px;text-decoration:none;padding:16px 30px;border-radius:4px;background:var(--amarillo);color:var(--negro);border:3px solid var(--amarillo);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.line{background:transparent;color:#fff;border-color:#fff}
+
+  /* HERO */
+  .hero{background:var(--turquesa);color:#fff;position:relative;overflow:hidden;padding:0}
+  .hero::before{content:"";position:absolute;top:0;left:0;width:260px;height:260px;background:var(--negro);clip-path:polygon(0 0,100% 0,0 100%)}
+  .hero::after{content:"";position:absolute;bottom:0;right:0;width:300px;height:300px;background:var(--magenta);clip-path:polygon(100% 0,100% 100%,0 100%)}
+  .nav{position:relative;z-index:2;padding:26px 0 0 }
+  .nav .wrap{display:flex;justify-content:flex-end}
+  .nav a{color:#fff;font-weight:500;text-decoration:none;font-size:15px}
+  .hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:40px;align-items:center;padding:60px 24px 110px}
+  .kicker{font-weight:500;font-style:italic;font-size:20px;margin-bottom:14px}
+  .hero h1{font-size:clamp(46px,9vw,92px);text-transform:uppercase;margin-bottom:22px}
+  .hero h1 span{display:block}
+  .hero p.lead{font-size:21px;max-width:560px;margin-bottom:34px;font-weight:300}
+  .hero .btns{display:flex;gap:14px;flex-wrap:wrap}
+  .coin{justify-self:center;width:min(280px,70vw);aspect-ratio:1;border-radius:50%;background:var(--amarillo);color:var(--negro);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-8deg);box-shadow:0 0 0 14px rgba(255,255,255,.18)}
+  .coin b{font-weight:900;font-size:clamp(80px,14vw,120px);line-height:.9}
+  .coin i{font-weight:500;font-size:22px}
+
+  /* LÍNEAS */
+  .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;margin-top:40px}
+  .card{background:var(--suave);padding:26px 24px 28px;border-top:8px solid var(--c);}
+  .card p{color:var(--texto2);font-size:16px}
+  .card small{display:block;font-weight:500;font-style:italic;color:var(--negro);margin-bottom:10px;font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+
+  /* CALCULADORA */
+  .calc{background:var(--negro);color:#fff}
+  .calc .sub{color:#d6d6d5}
+  .calc-box{margin-top:38px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .calc label{font-weight:500;display:block;margin-bottom:12px}
+  input[type=range]{width:100%;accent-color:var(--amarillo);height:30px}
+  .big{font-weight:900;font-size:clamp(50px,9vw,84px);line-height:1;color:var(--amarillo)}
+  .big small{font-size:.32em;font-weight:500;color:#fff;font-style:italic}
+  .res{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .res div{border-left:4px solid var(--magenta);padding-left:14px}
+  .res b{display:block;font-weight:900;font-size:30px}
+  .res span{font-weight:300;font-size:15px;color:#d6d6d5}
+  .nota{margin-top:22px;font-size:14px;font-style:italic;color:#bdbdbc;font-weight:300}
+
+  /* PASOS */
+  .steps{counter-reset:p;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;margin-top:40px}
+  .step{counter-increment:p}
+  .step::before{content:counter(p);display:flex;width:54px;height:54px;border-radius:50%;background:var(--magenta);color:#fff;font-weight:900;font-size:26px;align-items:center;justify-content:center;margin-bottom:14px}
+  .step p{color:var(--texto2);font-size:16px}
+
+  /* CIFRAS */
+  .cifras{background:var(--suave)}
+  .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:28px;margin-top:40px}
+  .nums b{display:block;font-weight:900;font-size:60px;line-height:1;color:var(--turquesa)}
+  .nums span{font-weight:500}
+
+  /* BENEFICIOS */
+  .benef{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px 40px;margin-top:36px;list-style:none}
+  .benef li{padding-left:34px;position:relative;color:var(--texto2)}
+  .benef li strong{color:var(--texto);font-weight:500}
+  .benef li::before{content:"";position:absolute;left:0;top:6px;width:18px;height:18px;background:var(--amarillo);border:3px solid var(--negro);border-radius:50%}
+
+  /* CTA */
+  .cta{background:var(--magenta);color:#fff;position:relative;overflow:hidden}
+  .cta::after{content:"";position:absolute;right:0;bottom:0;width:220px;height:220px;background:var(--turquesa);clip-path:polygon(100% 0,100% 100%,0 100%)}
+  .cta .wrap{position:relative;z-index:2}
+  .cta p{font-size:20px;max-width:620px;margin:6px 0 30px;font-weight:300}
+  .cta .btn{background:var(--negro);border-color:var(--negro);color:#fff}
+
+  footer{background:var(--negro);color:#bdbdbc;padding:30px 0;font-size:14px;font-weight:300}
+  footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  footer a{color:#fff}
+  mark{background:var(--amarillo);color:var(--negro);padding:0 4px}
+
+
+  /* ADHESIÓN Y TRAZABILIDAD DE CAPTACIÓN */
+  .direct-mail{color:#fff;text-decoration:underline;text-underline-offset:3px}
+
+  @media(max-width:760px){
+    section{padding:60px 0}
+    .hero-in{grid-template-columns:1fr;padding-bottom:140px}
+    .coin{order:-1;width:170px}
+    .calc-box{grid-template-columns:1fr}
+  }
+
+  /* FLUJO "QUIERO SUMARME" */
+  .bfl-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+  .bfl-actions button,.bfl-actions a{font:inherit;font-weight:900;font-size:17px;cursor:pointer;text-decoration:none;text-align:center;padding:13px 24px;border-radius:4px;border:3px solid var(--negro);background:var(--negro);color:#fff}
+  .bfl-actions .alt{background:#fff;color:var(--negro)}
+  .bfl-actions button:hover,.bfl-actions a:hover{background:var(--turquesa);border-color:var(--turquesa);color:#fff}
+  .bfl-x{position:absolute;top:8px;right:12px;background:none;border:none;font-size:30px;line-height:1;cursor:pointer;color:#666}
+  .bfl-float{position:fixed;right:18px;bottom:18px;z-index:900;width:min(380px,calc(100vw - 36px));background:#fff;color:var(--negro);border-radius:8px;border-top:10px solid var(--turquesa);box-shadow:0 12px 40px rgba(0,0,0,.35);padding:20px 22px 18px;display:none}
+  .bfl-float.open{display:block}
+  .bfl-float h3{font-size:20px;margin-bottom:10px;padding-right:26px}
+  .bfl-float ol{margin:0 0 12px 22px;font-size:15.5px;color:var(--texto2)}
+  .bfl-float li{margin-bottom:8px}
+  .bfl-float li::marker{font-weight:900;color:var(--magenta)}
+  .bfl-float .bfl-actions{margin-top:12px}
+  .bfl-float .bfl-actions button,.bfl-float .bfl-actions a{font-size:14px;padding:9px 14px;border-width:2px}
+  .bfl-float .bfl-x{top:4px;right:10px}
+  .bfl-float .pipmsg{font-size:13px;color:#0B676B;font-weight:700;margin-bottom:10px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <nav class="nav"><div class="wrap"><a href="https://brotherforlife.es">brotherforlife.es</a></div></nav>
+  <div class="wrap hero-in">
+    <div>
+      <p class="kicker">Para empresas con corazón</p>
+      <h1><span>Euro</span><span>solidario</span></h1>
+      <p class="lead">Por un euro al día, tu empresa ayuda a mejorar la vida de jóvenes que han crecido en el sistema de protección y que no deberían emanciparse en soledad.</p>
+      <div class="btns">
+        <a class="btn js-sumarme" href="https://www.migranodearena.org/usuario/brother-for-life-47cb/dona" target="_blank" rel="noopener" id="btnSumarme">Quiero sumarme</a>
+        <a class="btn line" href="#calculadora">Calcula tu euro</a>
+      </div>
+    </div>
+    <div class="coin" aria-hidden="true"><b>1€</b><i>al día</i></div>
+  </div>
+</header>
+
+<section id="que">
+  <div class="wrap">
+    <h2>Un euro al día.<br>Mucho más de lo que parece.</h2>
+    <p class="sub">En Brother For Life acompañamos a jóvenes tutelados y extutelados de Valencia en su paso a la vida adulta. Tu euro diario sostiene ese acompañamiento, todo el año.</p>
+    <div class="grid4">
+      <article class="card" style="--c:var(--turquesa)">
+        <small>Acompañamiento</small>
+        <h3>Alguien a su lado</h3>
+        <p>Apoyo emocional y psicológico, y mentores adultos que están presentes cuando toca tomar decisiones importantes.</p>
+      </article>
+      <article class="card" style="--c:var(--magenta)">
+        <small>Formación</small>
+        <h3>Herramientas para la vida</h3>
+        <p>Life Talks, talleres y refuerzo educativo para crecer en lo personal y abrirse camino en lo académico.</p>
+      </article>
+      <article class="card" style="--c:var(--amarillo)">
+        <small>Inserción laboral</small>
+        <h3>Una puerta de entrada</h3>
+        <p>Orientación, activación y contacto real con el mundo laboral para que el primer empleo no sea un muro.</p>
+      </article>
+      <article class="card" style="--c:var(--cian)">
+        <small>Otras acciones</small>
+        <h3>Un hogar para empezar</h3>
+        <p>Un piso de emancipación acompañado y una comunidad que sustituye la soledad por pertenencia.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="calculadora" class="calc">
+  <div class="wrap">
+    <h2>Calcula tu euro</h2>
+    <p class="sub">Elige cuántos euros al día quiere aportar tu empresa y mira lo que suma en un año.</p>
+    <div class="calc-box">
+      <div>
+        <label for="eur">Euros al día: <strong id="eurTxt">1</strong></label>
+        <input id="eur" type="range" min="1" max="10" step="1" value="1">
+      </div>
+      <div>
+        <div class="big"><span id="anual">365</span> €<small> al año</small></div>
+        <div class="res" style="margin-top:22px">
+          <div><b id="mes">30 €</b><span>al mes (aprox.)</span></div>
+          <div><b>365</b><span>días al año sumando oportunidades para jóvenes</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="nota">Cada aportación contribuye al acompañamiento, la formación y la autonomía de los jóvenes. Los recursos se destinan a las necesidades reales de los programas de Brother For Life.</p>
+  </div>
+</section>
+
+<section id="como">
+  <div class="wrap">
+    <h2>Así de sencillo</h2>
+    <div class="steps">
+      <div class="step"><h3>Te sumas</h3><p>Nos escribes y acordamos contigo la aportación: un euro al día o el múltiplo que encaje con tu empresa.</p></div>
+      <div class="step"><h3>Aportas</h3><p>Puedes hacerlo en un pago mensual, trimestral o anual, con la modalidad que mejor te venga.</p></div>
+      <div class="step"><h3>Ves el resultado</h3><p>Te contamos en qué se ha convertido tu euro: actividades, jóvenes acompañados y avances. Sin letra pequeña.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cifras">
+  <div class="wrap">
+    <h2>Lo que ya hacemos juntos</h2>
+    <p class="sub">Datos de nuestro segundo año de camino (2025).</p>
+    <div class="nums">
+      <div><b>+70</b><span>jóvenes en nuestras actividades</span></div>
+      <div><b>+40</b><span>voluntarios y mentores activos</span></div>
+      <div><b>5</b><span>jóvenes en el primer piso de emancipación</span></div>
+      <div><b>+100</b><span>participantes en el primer torneo de fútbol de hogares</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="empresas">
+  <div class="wrap">
+    <h2>Qué se lleva tu empresa</h2>
+    <ul class="benef">
+      <li><strong>Un impacto que se puede contar.</strong> Un compromiso real y constante con la juventud de tu ciudad.</li>
+      <li><strong>Transparencia total.</strong> Publicamos cada año nuestra memoria de actividades y económica.</li>
+      <li><strong>Implicación de tu equipo.</strong> Voluntariado, charlas y jornadas para que tus compañeros conozcan el proyecto de cerca.</li>
+      <li><strong>Reconocimiento.</strong> Tu empresa aparecerá entre nuestras entidades colaboradoras.</li>
+    </ul>
+  </div>
+</section>
+
+<section id="unete" class="cta">
+  <div class="wrap">
+    <h2>Que nadie se emancipe en soledad</h2>
+    <p>Un compromiso pequeño puede abrir oportunidades enormes. Contacta con nosotros para conocer la campaña o incorporar a tu empresa.</p>
+    <a class="btn js-sumarme" href="https://www.migranodearena.org/usuario/brother-for-life-47cb/dona" target="_blank" rel="noopener" id="btnSumarme2">Quiero sumarme</a>
+    <p style="font-size:15px;margin-top:20px">¿Prefieres escribirnos directamente? <a class="direct-mail" id="mailDirecto" href="mailto:info@brotherforlife.es?subject=Euro%20Solidario">info@brotherforlife.es</a> o <a class="direct-mail" id="waDirecto" href="https://wa.me/34654830123" target="_blank" rel="noopener">escríbenos un WhatsApp</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Asociación Brother For Life · Valencia</span>
+    <span><a href="https://brotherforlife.es">brotherforlife.es</a> · <a href="https://www.instagram.com/brotherforlife_vlc/">Instagram</a></span>
+  </div>
+</footer>
+
+<aside class="bfl-float" id="bflAyuda" role="complementary" aria-label="Instrucciones para donar">
+  <button class="bfl-x" type="button" id="bflAyudaX" aria-label="Cerrar instrucciones">&times;</button>
+  <h3>Sigue estos pasos</h3>
+  <p class="pipmsg" id="bflPipMsg" hidden>Te hemos dejado estas instrucciones flotando sobre la otra pestaña.</p>
+  <ol>
+    <li>Recuerda registrarte correctamente con tus datos fiscales antes de hacer la donación.</li>
+    <li>Selecciona importe, por ejemplo 35 €, y a continuación pon el nombre de tu empresa y dale a «Siguiente».</li>
+    <li>Clica en «Donación mensual» y «Siguiente».</li>
+    <li>Introduce los datos de la tarjeta y ¡a donar!</li>
+  </ol>
+  <div class="bfl-actions">
+    <button type="button" id="bflDescargar">Descargar instrucciones</button>
+    <a class="alt" id="bflReabrir" href="https://www.migranodearena.org/usuario/brother-for-life-47cb/dona" target="_blank" rel="noopener">Abrir MiGranodeArena</a>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var r=document.getElementById('eur');
+  function fmt(n){return n.toLocaleString('es-ES')}
+  function pintar(){
+    var e=+r.value, anual=e*365;
+    document.getElementById('eurTxt').textContent=e;
+    document.getElementById('anual').textContent=fmt(anual);
+    document.getElementById('mes').textContent=fmt(Math.round(anual/12))+' €';
+  }
+  r.addEventListener('input',pintar);
+  pintar();
+})();
+</script>
+
+<script>
+(function(){
+  var DONA_URL='https://www.migranodearena.org/usuario/brother-for-life-47cb/dona';
+  var PASOS=[
+    'Recuerda registrarte correctamente con tus datos fiscales antes de hacer la donación.',
+    'Selecciona importe, por ejemplo 35 €, y a continuación pon el nombre de tu empresa y dale a «Siguiente».',
+    'Clica en «Donación mensual» y «Siguiente».',
+    'Introduce los datos de la tarjeta y ¡a donar!'
+  ];
+  var $=function(id){return document.getElementById(id)};
+  var ayuda=$('bflAyuda'), pip=null;
+
+  /* Contacto directo: correo y WhatsApp (654 83 01 23). Si el enlace trae ?ref=CODIGO, se incluye. */
+  var ref=(new URLSearchParams(window.location.search).get('ref')||'').trim().toUpperCase();
+  var okRef=/^[A-Z0-9_-]{2,25}$/.test(ref);
+  var asunto='Euro Solidario'+(okRef?' | Ref: '+ref:'');
+  var cuerpo='Hola, equipo de Brother For Life:\n\nMe gustaría saber más sobre la campaña Euro Solidario.'+(okRef?'\n\nCódigo de referencia: '+ref:'')+'\n\nUn saludo.';
+  $('mailDirecto').href='mailto:info@brotherforlife.es?subject='+encodeURIComponent(asunto)+'&body='+encodeURIComponent(cuerpo);
+  var wa='Hola, equipo de Brother For Life. Me gustaría saber más sobre la campaña Euro Solidario.'+(okRef?' Mi código de referencia es '+ref+'.':'');
+  $('waDirecto').href='https://wa.me/34654830123?text='+encodeURIComponent(wa);
+
+  /* Quiero sumarme (los dos botones): abre MiGranodeArena y deja las instrucciones flotando */
+  /* Si la página se muestra en un marco tan alto como ella misma (p. ej. un enlace de Claude),
+     un cartel "fijo" quedaría al final de la página: allí se coloca junto al botón pulsado. */
+  function mostrarCartel(btn){
+    ayuda.classList.add('open');
+    var enMarco=(window.self!==window.top)&&(window.innerHeight>=document.documentElement.scrollHeight-60);
+    if(!enMarco) return;
+    var r=btn.getBoundingClientRect();
+    var top=r.top+window.scrollY-30;
+    var max=document.documentElement.scrollHeight-ayuda.offsetHeight-20;
+    ayuda.style.position='absolute';
+    ayuda.style.bottom='auto';
+    ayuda.style.top=Math.max(10,Math.min(top,max))+'px';
+    try{ayuda.scrollIntoView({behavior:'smooth',block:'center'});}catch(e){}
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll('.js-sumarme'),function(b){
+    b.addEventListener('click',function(e){
+      e.preventDefault();
+      mostrarCartel(b);
+      lanzarFlotante();                     /* ventana flotante sobre otras pestañas (Chrome/Edge de escritorio) */
+      window.open(DONA_URL,'_blank','noopener');
+    });
+  });
+  $('bflAyudaX').addEventListener('click',function(){ayuda.classList.remove('open');if(pip){try{pip.close();}catch(e){}}});
+
+  function lanzarFlotante(){
+    if(!('documentPictureInPicture' in window)) return;
+    window.documentPictureInPicture.requestWindow({width:380,height:400}).then(function(w){
+      pip=w;
+      var st=w.document.createElement('style');
+      st.textContent="body{margin:0;padding:18px 20px;font-family:Roboto,Arial,sans-serif;color:#1C1C1B;border-top:10px solid #0B7E84;line-height:1.5}"+
+        "h3{margin:0 0 10px;font-size:20px;font-weight:900}ol{margin:0 0 0 20px;padding:0;font-size:15.5px;color:#4a4a49}li{margin-bottom:9px}li::marker{font-weight:900;color:#E5007D}";
+      w.document.head.appendChild(st);
+      var h=w.document.createElement('div');
+      h.innerHTML='<h3>Sigue estos pasos</h3><ol>'+PASOS.map(function(t){return '<li>'+t+'</li>';}).join('')+'</ol>';
+      w.document.body.appendChild(h);
+      $('bflPipMsg').hidden=false;
+    }).catch(function(){ /* sin ventana flotante: queda la tarjeta de la página y la descarga */ });
+  }
+
+  /* Descargar instrucciones (alternativa si no hay ventana flotante) */
+  $('bflDescargar').addEventListener('click',function(){
+    var txt='DONAR A BROTHER FOR LIFE A TRAVÉS DE MIGRANODEARENA\n\nSigue estos pasos:\n\n'+
+      PASOS.map(function(t,i){return (i+1)+'º '+t;}).join('\n')+
+      '\n\nEnlace para donar: '+DONA_URL+'\n';
+    var blob=new Blob([txt],{type:'text/plain;charset=utf-8'});
+    var a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);a.download='instrucciones-donacion-brother-for-life.txt';
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(function(){URL.revokeObjectURL(a.href);},1000);
+  });
+})();
+</script>
+</body>
+</html>
